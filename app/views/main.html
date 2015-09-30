@@ -1,0 +1,32 @@
+ <!-- <table class="table table-hover">
+    <tr ng-repeat="subject in subjects">
+      <td>{{subject.code}}</td>
+      <td>{{subject.desc}}</td>
+    </tr>
+  </table>-->
+
+<h2>Explore Fall 2015 Classes</h2>
+<div class="container">
+  <span id="loading-subjects" class="glyphicon glyphicon-refresh loading-stuff" aria-hidden="true"></span>
+  <div ng-init="App.load()">
+    <a href="" class="list-group-item" ng-repeat="subject in subjects">
+      <div ng-click="subject.collapse = !subject.collapse; App.getCourses(subject.code,subject.desc)">
+        <i class="pull-left glyphicon" ng-class="{'glyphicon-chevron-down': !subject.collapse, 'glyphicon-chevron-right': subject.collapse}"></i> 
+        {{subject.code}} {{subject.desc}}
+      </div>
+
+      <div collapse="subject.collapse" ng-init="subject.collapse = true">
+        <span class="glyphicon glyphicon-refresh loading-stuff loading-courses" aria-hidden="true"></span>
+        <accordion id="accordion-courses">
+          <accordion-group is-open="status.open" ng-repeat="course in courses">
+            <accordion-heading>
+              <i class="pull-left glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> 
+              {{course.subject}} {{course.catalog_nbr}} - {{course.course_title_long}}
+            </accordion-heading>
+            Blah
+          </accordion-group>
+        </accordion>
+      </div>
+    </a>
+  </div>
+</div>
