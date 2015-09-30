@@ -1,12 +1,4 @@
-# innovation-colab-sample-applications
-
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.11.1.
-
-## Build & development
-
-Run `grunt` for building and `grunt serve` for preview.
-
-## Testing
-
-Running `grunt test` will run the unit tests with karma.
+Included here are various samaple applications that make use of the Streamer API.
+Progress thus far:
+- Angular Web App (curriculum API)
+- Mobile App (in development for curriculum API)
