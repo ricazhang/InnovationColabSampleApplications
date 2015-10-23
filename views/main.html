@@ -9,7 +9,7 @@
 <div class="container">
   <span id="loading-subjects" class="glyphicon glyphicon-refresh loading-stuff" aria-hidden="true"></span>
   <uib-accordion ng-init="App.load()">
-    <uib-accordion-group href="" class="list-group-item" ng-repeat="subject in subjects">
+    <uib-accordion-group class="list-group-item" ng-repeat="subject in subjects">
       <uib-accordion-heading ng-click="subject.collapse = !subject.collapse; App.getCourses(subject.code,subject.desc);" ng-init="subject.collapse = true">
         <i class="pull-left glyphicon" ng-class="{'glyphicon-chevron-down': !subject.collapse, 'glyphicon-chevron-right': subject.collapse}"></i> 
         {{subject.code}} {{subject.desc}}
