@@ -36,7 +36,6 @@ angular.module('innovationColabSampleApplicationsApp')
     		var courseSubject = code + " - " + desc;
     		courseSubject = encodeURIComponent(courseSubject.trim());
     		// encodeURIComponent replaces spaces with percent 20
-    		console.log("RQ: " + STREAMER + "curriculum/courses/subject/" + courseSubject + "?" + ACCESS_TOKEN);
     		$http.get(STREAMER + "curriculum/courses/subject/" + courseSubject + "?" + ACCESS_TOKEN)
     		.success(function(data) {
     			console.log("SUCCESS");
