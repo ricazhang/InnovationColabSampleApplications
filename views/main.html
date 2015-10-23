@@ -1,0 +1,24 @@
+ <!-- <table class="table table-hover">
+    <tr ng-repeat="subject in subjects">
+      <td>{{subject.code}}</td>
+      <td>{{subject.desc}}</td>
+    </tr>
+  </table>-->
+
+<h2>Explore Fall 2015 Classes</h2>
+<div class="container">
+  <span id="loading-subjects" class="glyphicon glyphicon-refresh loading-stuff" aria-hidden="true"></span>
+  <uib-accordion ng-init="App.load()">
+    <uib-accordion-group href="" class="list-group-item" ng-repeat="subject in subjects">
+      <uib-accordion-heading ng-click="subject.collapse = !subject.collapse; App.getCourses(subject.code,subject.desc);" ng-init="subject.collapse = true">
+        <i class="pull-left glyphicon" ng-class="{'glyphicon-chevron-down': !subject.collapse, 'glyphicon-chevron-right': subject.collapse}"></i> 
+        {{subject.code}} {{subject.desc}}
+      </uib-accordion-heading>
+
+      <span class="glyphicon glyphicon-refresh loading-stuff loading-courses" ng-if="!subject.collapse" aria-hidden="true"></span>
+      <ul ng-if="currentSubject == subject.code"> 
+        <li ng-repeat="course in courses">{{course.subject}} {{course.catalog_nbr}} - {{course.course_title_long}}</li>
+      </ul>
+    </uib-accordion-group>
+  </uib-accordion>
+</div>
