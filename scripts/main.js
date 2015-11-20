@@ -17,7 +17,8 @@ angular.module('innovationColabSampleApplicationsApp')
     var STREAMER = "https://streamer.oit.duke.edu/";
     var ACCESS_TOKEN = "access_token=3ad251733ebd8496b96b5d9eccc21da4";
     var CALLBACK = "&callback=?";
-    $scope.oneAtATime = false;
+    $scope.oneAtATime = true;
+    $scope.isOpen = false;
     $scope.App = {
     	load: function() {
 			$http.get(STREAMER + "curriculum/list_of_values/fieldname/SUBJECT?" + ACCESS_TOKEN)
@@ -35,10 +36,10 @@ angular.module('innovationColabSampleApplicationsApp')
     		var courseSubject = code + " - " + desc;
     		courseSubject = encodeURIComponent(courseSubject.trim());
     		// encodeURIComponent replaces spaces with percent 20
-    		
     		$http.get(STREAMER + "curriculum/courses/subject/" + courseSubject + "?" + ACCESS_TOKEN)
     		.success(function(data) {
     			console.log("SUCCESS");
+                $scope.currentSubject = code;
     			$scope.courses = data.ssr_get_courses_resp.course_search_result.subjects.subject.course_summaries.course_summary;
     			$('.loading-courses').hide();
     		})

@@ -10,13 +10,7 @@
  */
 angular
   .module('innovationColabSampleApplicationsApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
-    'ui.bootstrap'
+    'ngRoute'
   ])
   .config(function ($routeProvider) {
     $routeProvider
