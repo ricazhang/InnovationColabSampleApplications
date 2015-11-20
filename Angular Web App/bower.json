@@ -15,5 +15,6 @@
     "angular-mocks": "^1.3.0"
   },
   "appPath": "app",
-  "moduleName": "innovationColabSampleApplicationsApp"
+  "moduleName": "innovationColabSampleApplicationsApp",
+  "directory": "app/bower_components"
 }
